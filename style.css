@@ -3,6 +3,10 @@ body {
     background-color: #232A3C;
 }
 
+img {
+    margin: 10px;
+}
+
 .images-list {
     width: 100%;
 }

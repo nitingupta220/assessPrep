@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="wordGame">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>AssessPrep</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body ng-controller="wordGameController as appCtrl">
+
+    <div class="container images d-flex justify-content-center">
+        <!--
+        <ul class="row images-list">
+            <li ng-repeat="image in appCtrl.images track by $index" class="col-sm-6 images-item" style="background: url({{image.url_m}}) center center no-repeat;" >
+            </li>
+        </ul>
+-->
+        <ul class="list-inline">
+            <li><img src="download.jpeg" alt=""></li>
+            <li><img src="download.jpeg" alt=""></li>
+        </ul>
+        <ul class="list-inline">
+            <li><img src="download.jpeg" alt=""></li>
+            <li><img src="download.jpeg" alt=""></li>
+        </ul>
+    </div>
+    <div class="container inputs mt-5 text-center">
+        <ul class="list-unstyled list-inline  answer-input-answer">
+            <li class="answer-input-item" ng-repeat="item in appCtrl.answerLength track by $index">
+                <button class="btn btn-default" ng-class="{'with-item': appCtrl.answer[$index]}" ng-click="!appCtrl.answer[$index]||appCtrl.removeAnswers($index, appCtrl.answer[$index])">
+                  <span ng-if="appCtrl.answer[$index]">
+                    {{appCtrl.answer[$index]}}
+                  </span>
+                  <span ng-if="!appCtrl.answer[$index]">
+                    X
+                  </span>
+                </button>
+            </li>
+        </ul>
+    </div>
+    <div class="container choices text-center">
+        <ul class="words-wrapper">
+            <li class="words-item" ng-repeat="(key, hint) in appCtrl.answerHints track by $index">
+                <button class="btn btn-default" ng-click="!hint||appCtrl.addAnswers(key, hint)" ng-class="{'without-item': !appCtrl.answerHints[key]}">
+                  <span ng-if="appCtrl.answerHints[key]">
+                    {{hint}}
+                  </span>
+                  <span ng-if="!appCtrl.answerHints[key]">
+                    X
+                  </span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

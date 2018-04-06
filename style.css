@@ -1,0 +1,60 @@
+body {
+    padding-top: 3rem;
+    background-color: #232A3C;
+}
+
+.images-list {
+    width: 100%;
+}
+
+.images-item {
+    height: 200px;
+    background-size: cover !important;
+}
+
+.words-wrapper,
+.answer-input-wrapper {
+    text-align: center;
+    margin: 30px 0 20px;
+}
+
+.words-item,
+.answer-input-item {
+    display: inline-block;
+}
+
+.words-item .btn,
+.answer-input-item .btn {
+    font-size: 20px;
+    width: 45px;
+    margin: 0 5px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #121520;
+    box-shadow: 0px 0px 12px #8A91A2;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    font-weight: bold;
+}
+
+.answer-input-item .btn,
+.words-item .btn.without-item {
+    outline: none !important;
+    color: transparent !important;
+}
+
+.answer-input-item .btn.with-item,
+.words-item .btn {
+    color: #333 !important;
+}
+
+.choices .words-item .btn {
+    color: #28282E;
+    font-size: 18px;
+    border-bottom: 4px solid #878787;
+    background-color: #D0D0D0;
+    margin: 0 5px;
+    font-weight: bolder;
+    border-radius: 3px;
+    text-align: center;
+}

@@ -22,15 +22,11 @@
 <body ng-controller="wordGameController as appCtrl">
 
     <div class="container images d-flex justify-content-center">
-        
-        <ul class="list-inline">
-            <li><img src="download.jpeg" alt=""></li>
-            <li><img src="download.jpeg" alt=""></li>
-        </ul>
-        <ul class="list-inline">
-            <li><img src="download.jpeg" alt=""></li>
-            <li><img src="download.jpeg" alt=""></li>
-        </ul>
+<!--       using localstorage to show and hide the images-->
+        <img ng-src="{{images[0].imageUrl}}" alt="" ng-if="appCtrl.localStorage.stage == 1">
+        <img ng-src="{{images[1].imageUrl}}" alt="" ng-if="appCtrl.localStorage.stage == 2">
+        <img ng-src="{{images[2].imageUrl}}" alt="" ng-if="appCtrl.localStorage.stage == 3">
+        <img ng-src="{{images[3].imageUrl}}" alt="" ng-if="appCtrl.localStorage.stage == 4">
     </div>
     <div class="container inputs mt-5 text-center">
         <ul class="list-unstyled list-inline  answer-input-answer">
@@ -59,6 +55,9 @@
                 </button>
             </li>
         </ul>
+    </div>
+    <div class="text-center">
+        <button class="btn btn-success" ng-click="appCtrl.submitQuestion()">Submit</button>
     </div>
 
     <!-- Bootstrap core JavaScript
